@@ -30,7 +30,7 @@ Make sure you have the following installed:
 ### Clone the repository (if not already)
 
 git clone https://github.com/savir2010/poker-app.git
-
+# Get into the poker-app directory
 # Create and activate a virtual environment
 1. python3 -m venv venv
 2. source venv/bin/activate 
