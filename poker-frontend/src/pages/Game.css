@@ -1,0 +1,162 @@
+.poker-game {
+  --ion-background-color: #1a1a1a;
+  --ion-text-color: #ffffff;
+}
+
+.game-toolbar {
+  --background: #2c3e50;
+}
+
+.game-title {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.title-icon {
+  margin-right: 8px;
+  font-size: 24px;
+}
+
+.animated-background-game {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, #2c3e50 0%, #1a1a1a 70%);
+  z-index: -1;
+}
+
+.game-content {
+  z-index: 1;
+}
+
+.game-info-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  margin: 20px 0;
+}
+
+.game-status {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  color: #10b981;
+}
+
+.player-list {
+  margin-bottom: 20px;
+  background: transparent;
+}
+
+.current-player {
+  --background: rgba(16, 185, 129, 0.1);
+  --background-hover: rgba(16, 185, 129, 0.2);
+}
+
+.turn-status {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.turn-status h3 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.next-turn-btn {
+  --background: #10b981;
+  --background-activated: #059669;
+  --color: white;
+  margin-top: 10px;
+}
+
+.custom-toast {
+  --background: rgba(16, 185, 129, 0.9);
+  --box-shadow: 0 3px 12px rgba(16, 185, 129, 0.4);
+  --color: white;
+}
+.poker-game {
+    --ion-background-color: #1a1a1a;
+    --ion-text-color: #ffffff;
+  }
+  
+  .game-toolbar {
+    --background: #2c3e50;
+  }
+  
+  .game-title {
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+  
+  .title-icon {
+    margin-right: 8px;
+    font-size: 24px;
+  }
+  
+  .animated-background-game {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, #2c3e50 0%, #1a1a1a 70%);
+    z-index: -1;
+  }
+  
+  .game-content {
+    z-index: 1;
+  }
+  
+  .game-info-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    margin: 20px 0;
+  }
+  
+  .game-status {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: #10b981;
+  }
+  
+  .player-list {
+    margin-bottom: 20px;
+    background: transparent;
+  }
+  
+  .current-player {
+    --background: rgba(16, 185, 129, 0.1);
+    --background-hover: rgba(16, 185, 129, 0.2);
+  }
+  
+  .turn-status {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .turn-status h3 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+  }
+  
+  .next-turn-btn {
+    --background: #10b981;
+    --background-activated: #059669;
+    --color: white;
+    margin-top: 10px;
+  }
+  
+  .custom-toast {
+    --background: rgba(16, 185, 129, 0.9);
+    --box-shadow: 0 3px 12px rgba(16, 185, 129, 0.4);
+    --color: white;
+  }

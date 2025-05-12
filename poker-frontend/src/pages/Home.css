@@ -1,0 +1,833 @@
+/* Home.css */
+:root {
+    --poker-green: #0A5C36;
+    --poker-dark-green: #053D23;
+    --poker-light-green: #0D8246;
+    --poker-neon-green: #2ECC71;
+    --poker-black: #121212;
+    --poker-dark-gray: #1E1E1E;
+    --poker-gold: #E6C700;
+    --poker-light-gold: #FFD700;
+    --poker-white: #F0F0F0;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Overall App Styling */
+  .poker-app {
+    background-color: var(--poker-black);
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .app-toolbar {
+    --background: var(--poker-dark-green);
+    --color: var(--poker-white);
+    border-bottom: 2px solid var(--poker-gold);
+  }
+  
+  .app-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title-icon {
+    margin-right: 8px;
+    color: var(--poker-gold);
+    font-size: 1.4rem;
+  }
+  
+  .poker-content {
+    --background: none;
+    background-color: var(--poker-black);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Animated Background Pattern */
+  .animated-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(45deg, rgba(10, 92, 54, 0.5) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(10, 92, 54, 0.5) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(10, 92, 54, 0.5) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(10, 92, 54, 0.5) 75%);
+    background-size: 20px 20px;
+    opacity: 0.15;
+    z-index: -1;
+    animation: background-move 30s linear infinite;
+  }
+  
+  @keyframes background-move {
+    0% {
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    }
+    100% {
+      background-position: 500px 500px, 500px 510px, 510px 490px, 490px 500px;
+    }
+  }
+  
+  /* Card Shine Effect */
+  .card-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-15deg);
+    animation: card-shine 6s infinite;
+    z-index: 1;
+  }
+  
+  @keyframes card-shine {
+    0% { left: -100%; }
+    20% { left: 100%; }
+    100% { left: 100%; }
+  }
+  
+  /* Welcome Card Screen */
+  .welcome-card {
+    --background: var(--poker-dark-gray);
+    --color: var(--poker-white);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    position: relative;
+    margin: 40px 10px;
+    border: 1px solid var(--poker-green);
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--poker-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.6);
+  }
+  
+  .logo-icon {
+    font-size: 40px;
+    color: var(--poker-gold);
+  }
+  
+  .pulse {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.9);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.9);
+      opacity: 0.8;
+    }
+  }
+  
+  .welcome-title {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--poker-white);
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .welcome-text {
+    font-size: 16px;
+    text-align: center;
+    color: var(--poker-white);
+    opacity: 0.8;
+    margin-bottom: 30px;
+  }
+  
+  .username-input {
+    --background: rgba(255, 255, 255, 0.1);
+    --color: var(--poker-white);
+    --border-color: var(--poker-green);
+    --border-width: 2px;
+    --border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .custom-input {
+    --padding-start: 16px;
+    --placeholder-color: rgba(255, 255, 255, 0.5);
+    --placeholder-opacity: 1;
+    font-size: 16px;
+  }
+  
+  .continue-btn {
+    --background: var(--poker-green);
+    --background-activated: var(--poker-light-green);
+    --color: var(--poker-white);
+    --border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    height: 48px;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(10, 92, 54, 0.4);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .continue-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      transparent 100%
+    );
+    transition: all 0.4s ease;
+  }
+  
+  .continue-btn:active::before {
+    left: 100%;
+  }
+  
+  /* Party Options Screen */
+  .party-options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .username-display {
+    background: rgba(10, 92, 54, 0.3);
+    padding: 10px 16px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--poker-green);
+  }
+  
+  .logged-as {
+    color: var(--poker-white);
+    font-size: 14px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .change-btn {
+    --color: var(--poker-light-green);
+    --ripple-color: var(--poker-green);
+    font-size: 12px;
+    height: 28px;
+  }
+  
+  .option-card {
+    --background: var(--poker-dark-gray);
+    --color: var(--poker-white);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--poker-green);
+    margin: 0;
+  }
+  
+  .option-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--poker-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+    box-shadow: 0 0 15px rgba(10, 92, 54, 0.6);
+  }
+  
+  .option-icon ion-icon {
+    font-size: 30px;
+    color: var(--poker-white);
+  }
+  
+  .option-title {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--poker-white);
+    margin-bottom: 10px;
+  }
+  
+  .option-text {
+    font-size: 14px;
+    text-align: center;
+    color: var(--poker-white);
+    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+  
+  .code-input {
+    --background: rgba(255, 255, 255, 0.1);
+    --color: var(--poker-white);
+    --border-color: var(--poker-green);
+    --border-width: 1px;
+    --border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .action-btn {
+    --background: var(--poker-green);
+    --background-activated: var(--poker-light-green);
+    --color: var(--poker-white);
+    --border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    height: 48px;
+    box-shadow: 0 4px 10px rgba(10, 92, 54, 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .action-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      transparent 100%
+    );
+    transition: all 0.4s ease;
+  }
+  
+  .action-btn:active::before {
+    left: 100%;
+  }
+  
+  /* Party Screen */
+  .party-card {
+    --background: var(--poker-dark-gray);
+    --color: var(--poker-white);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    position: relative;
+    margin: 20px 10px;
+    border: 1px solid var(--poker-green);
+  }
+  
+  .party-status {
+    text-align: center;
+    padding: 5px 0 15px;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .host-status {
+    background: linear-gradient(to right, rgba(10, 92, 54, 0.5), rgba(0, 0, 0, 0));
+  }
+  
+  .party-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--poker-white);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .host-badge {
+    background: var(--poker-gold);
+    color: var(--poker-black);
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  
+  .party-code-container {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px dashed rgba(46, 204, 113, 0.3);
+  }
+  
+  .party-code-label {
+    font-size: 14px;
+    color: var(--poker-white);
+    opacity: 0.7;
+    margin: 0 0 5px;
+  }
+  
+  .party-code-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .party-code {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--poker-neon-green);
+    letter-spacing: 2px;
+  }
+  
+  .copy-btn {
+    --color: var(--poker-light-green);
+    --ripple-color: var(--poker-green);
+  }
+  
+  .members-container {
+    margin-bottom: 20px;
+  }
+  
+  .members-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--poker-white);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .members-icon {
+    color: var(--poker-light-green);
+  }
+  
+  .members-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .member-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  
+  .member-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--poker-green);
+    color: var(--poker-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    margin-right: 12px;
+  }
+  
+  .member-name {
+    font-size: 16px;
+    color: var(--poker-white);
+  }
+  
+  .dealer-tag {
+    position: absolute;
+    right: 12px;
+    background: var(--poker-gold);
+    color: var(--poker-black);
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  
+  .leave-btn {
+    --background: #cc2e2e;
+    --background-activated: #b52020;
+    --color: var(--poker-white);
+    --border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    height: 48px;
+    margin-top: 15px;
+  }
+  
+  .leave-btn ion-icon {
+    margin-right: 5px;
+  }
+  
+  /* Toasts */
+  .custom-toast {
+    --background: var(--poker-dark-green);
+    --color: var(--poker-white);
+    --border-radius: 8px;
+    --border-color: var(--poker-gold);
+    --border-style: solid;
+    --border-width: 1px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  /* Animations for card transitions */
+  @keyframes dealCard {
+    0% {
+      transform: translateY(-100%) rotateY(90deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) rotateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Animation for buttons */
+  .action-btn:active, .continue-btn:active {
+    transform: scale(0.96);
+  }
+  
+  /* Responsive adjustments */
+  @media (min-width: 768px) {
+    .welcome-card, .party-card {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .party-options-container {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  /* Enhanced Poker App Styles */
+
+/* Countdown Overlay and Animation */
+.countdown-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.countdown-number {
+  font-size: 120px;
+  font-weight: 800;
+  color: var(--poker-gold);
+  text-shadow: 0 0 20px var(--poker-neon-green);
+}
+
+.countdown-anim {
+  animation: countdown-pulse 1s infinite;
+}
+
+@keyframes countdown-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Order Modal Styles */
+.order-modal ion-toolbar {
+  --background: var(--poker-dark-green);
+  --color: var(--poker-white);
+}
+
+.order-instructions {
+  color: var(--poker-white);
+  padding: 16px;
+  margin: 0;
+  text-align: center;
+  background: rgba(10, 92, 54, 0.2);
+  border-radius: 8px;
+  font-style: italic;
+}
+
+.order-avatar {
+  background: var(--poker-green);
+  color: var(--poker-white);
+}
+
+.order-name {
+  margin-left: 12px;
+  font-size: 16px;
+}
+
+.dealer-indicator {
+  background: var(--poker-gold);
+  color: var(--poker-black);
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+ion-item ion-reorder {
+  color: var(--poker-green);
+}
+
+/* Enhanced Card Effects */
+.create-card, .join-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.create-card:hover, .join-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.option-icon {
+  position: relative;
+}
+
+.option-icon::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(46, 204, 113, 0.2) 0%, rgba(46, 204, 113, 0) 70%);
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+}
+
+/* Host Controls */
+.members-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.host-controls {
+  display: flex;
+}
+
+.order-btn, .kick-btn {
+  --color: var(--poker-neon-green);
+  --ripple-color: var(--poker-green);
+}
+
+.kick-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Party Actions */
+.party-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.start-btn {
+  --background: var(--poker-light-green);
+  --background-activated: var(--poker-green);
+  --color: var(--poker-white);
+  --border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  height: 48px;
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.5);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.start-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  transition: all 0.4s ease;
+}
+
+.start-btn:active::before {
+  left: 100%;
+}
+
+/* Responsive Improvements */
+@media (min-width: 480px) {
+  .countdown-number {
+    font-size: 160px;
+  }
+  
+  .option-title {
+    font-size: 24px;
+  }
+  
+  .option-text {
+    font-size: 16px;
+  }
+}
+
+/* Card shimmer effect enhancements */
+.card-shine {
+  animation-duration: 8s;
+}
+
+/* Animation for new members joining */
+@keyframes member-join {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.member-item {
+  animation: member-join 0.5s ease-out;
+}
+
+/* Empty party state */
+.empty-party {
+  text-align: center;
+  padding: 20px;
+  color: var(--poker-white);
+  opacity: 0.7;
+}
+
+.empty-party-icon {
+  font-size: 48px;
+  color: var(--poker-light-green);
+  margin-bottom: 10px;
+}
+
+/* Alerts styling */
+ion-alert.game-alert {
+  --background: var(--poker-dark-gray);
+  --color: var(--poker-white);
+}
+
+ion-alert.game-alert .alert-title {
+  color: var(--poker-neon-green);
+}
+
+ion-alert.game-alert .alert-button {
+  color: var(--poker-light-green);
+}
+
+/* Add a glow effect to the dealer tag */
+.dealer-tag {
+  box-shadow: 0 0 10px rgba(230, 199, 0, 0.5);
+  animation: dealer-glow 2s infinite alternate;
+}
+
+@keyframes dealer-glow {
+  from {
+    box-shadow: 0 0 5px rgba(230, 199, 0, 0.5);
+  }
+  to {
+    box-shadow: 0 0 15px rgba(230, 199, 0, 0.8);
+  }
+}
+
+/* Input focus states */
+.username-input.item-has-focus, .code-input.item-has-focus {
+  --border-color: var(--poker-neon-green);
+  --highlight-color: var(--poker-neon-green);
+}
+
+/* Enhance button hover states */
+.action-btn:hover, .continue-btn:hover, .start-btn:hover {
+  filter: brightness(1.1);
+}
+
+/* Party code styling enhancement */
+.party-code {
+  text-shadow: 0 0 10px rgba(46, 204, 113, 0.7);
+}
+
+/* App title enhancement */
+.app-title {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Bottom info text */
+.app-info {
+  text-align: center;
+  font-size: 12px;
+  color: var(--poker-white);
+  opacity: 0.5;
+  padding: 20px 0 10px;
+}
