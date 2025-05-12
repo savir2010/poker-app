@@ -32,8 +32,8 @@ Make sure you have the following installed:
 git clone https://github.com/savir2010/poker-app.git
 
 # Create and activate a virtual environment
-python3 -m venv venv
-source venv/bin/activate 
+1. python3 -m venv venv
+2. source venv/bin/activate 
 
 # Install Python dependencies
 pip install -r requirements.txt
