@@ -1,5 +1,7 @@
-Flask
+flask
 flask-cors
 flask-socketio
-eventlet
 pymongo
+python-engineio
+python-socketio
+dnspython
